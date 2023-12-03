@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Juego de Memoria</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <div class="game-title">
+    <h1>Juego de Memoria</h1>
+  </div>
+  <div class="game-info">
+    <h2>Información del Juego</h2>
+    <div class="info">
+      <p>Movimientos: <span class="moves">0</span></p>
+      <p>Usuario: <span class="username"></span></p>
+      <p>Puntaje: <span class="score">0</span></p>
+    </div>
+  </div>
+
+  <div class="user-input">
+    <label for="username">Ingrese su nombre de usuario:</label>
+    <input type="text" id="username" name="username">
+    <button id="startButton">Comenzar Juego</button>
+  </div>
+  
+  <button class="restart-button">Reiniciar</button> <!-- Botón de reinicio -->
+  <div class="message-section">
+    <!-- Aquí se mostrarán los mensajes de éxito, consejos, etc. -->
+  </div>
+  
+  <div class="game-and-highscores"> <!-- Contenedor principal para el juego y highscores -->
+  <div class="game-container hidden">
+    <!-- Aquí se generará el tablero con las cartas -->
+  </div>
+    <div class="highscores">
+      <h2>Highscores</h2>
+      <table id="highscore-table">
+        <thead>
+          <tr>
+            <th>Usuario</th>
+            <th>Puntaje</th>
+          </tr>
+        </thead>
+        <tbody id="highscore-list">
+          <!-- Aquí se cargarán los puntajes -->
+        </tbody>
+      </table>
+    </div>
+  </div>
+  
+
+  <script src="js/script.js"></script>
+</body>
+</html>
