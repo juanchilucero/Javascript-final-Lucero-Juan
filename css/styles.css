@@ -1,87 +1,40 @@
+/* Estilos para el juego de memoria */
+.juego-de-memoria {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f0f0f0;
+}
 
-  /* Estilos CSS para el juego de memoria */
-  body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background-color: #f8f8f8; /* Color de fondo */
-    display: flex;
-    flex-direction: column;
-    height: 100vh; /* Altura total de la ventana del navegador */
-  }
-  
-  .game-title {
-    text-align: center;
-    margin-top: 30px; /* Espaciado superior para el título */
-  }
-  
-  .game-title h1 {
-    color: #333; /* Color del texto del título */
-  }
-  
-  .game-and-highscores {
-    display: flex;
-    flex-grow: 1; /* Ocupa todo el espacio vertical disponible */
-  }
-  .game-container {
-    flex-grow: 7; /* Ocupa el 70% del espacio horizontal disponible */
-    background-color: #fff; /* Color de fondo del contenedor de las cartas */
-    border-radius: 10px; /* Bordes redondeados */
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra */
-    max-width: 70%; /* Ancho máximo del contenedor de las cartas */
-    margin: 30px auto; /* Centrar el contenedor y agregar espaciado */
-    padding: 20px; /* Espaciado interno del contenedor */
-  
-    display: flex; /* Activar flexbox */
-    justify-content: center; /* Centrar horizontalmente */
-    align-items: center; /* Centrar verticalmente */
-    flex-wrap: wrap; /* Ajustar para permitir el flujo de múltiples líneas */
-    gap: 10px; /* Espacio entre las tarjetas */
-  }
-  
-  
-  .card {
-    width: 100px;
-    height: 100px;
-    background-color: #f0f0f0;
-    border: 1px solid #ccc;
-    display: inline-block;
-    margin: 5px;
-    cursor: pointer;
-    text-align: center;
-    line-height: 100px; /* Alinear verticalmente el texto */
-    font-size: 24px; /* Tamaño del texto */
-    font-weight: bold; /* Negrita para el texto */
-    color: transparent; /* Ocultar el texto por defecto */
-  }
-  
-  .open {
-    color: black; /* Mostrar el texto al abrir la carta */
-  }
-  
-  .matched {
-    background-color: #8effa9;
-    cursor: default;
-  }
-  
+.cartas {
+  display: flex;
+  flex-wrap: wrap;
+  width: 300px;
+}
 
-  .highscores {
-    flex-grow: 2; /* Ocupa el 20% del espacio horizontal disponible */
-    margin: 20px;
-    max-width: 20%; /* Ancho máximo de la sección de highscores */
-  }
-  
-  .hidden {
-    display: none;
-  }
-  
-  
-  /* Estilos para la tabla y encabezados en highscores... */
-  
-  .progress-section,
-  .moves-section {
-    flex-grow: 1; /* Ocupa el 10% del espacio vertical disponible */
-    margin: 10px;
-  }
-  
-  /* Estilos para .progress-section y .moves-section... */
-  
+.carta {
+  width: 100px; /* Ancho deseado de la carta */
+  height: 100px; /* Alto deseado de la carta */
+  margin: 5px;
+  background-color: #3498db;
+  border-radius: 5px;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden; /* Para recortar las imágenes si son más grandes que la carta */
+}
+
+.contenido-carta {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0; /* Empieza oculta */
+  transition: opacity 0.5s ease-in-out; /* Agrega una transición para un efecto suave */
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.carta.volteada .contenido-carta {
+  opacity: 1; /* Muestra la imagen al voltear la carta */
+}
