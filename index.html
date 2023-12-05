@@ -6,12 +6,28 @@
   <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-  <div class="juego-de-memoria">
-    <div class="cartas" id="tablero-juego">
-      <!-- Las cartas se generan dinámicamente con JS -->
-    </div>
+  <h1>
+    Juego De Memoria
+  </h1>
+  <div id="ingreso-nombre">
+    <label for="username">Ingresa tu nombre:</label>
+    <input type="text" id="username" />
+    <button onclick="iniciarJuego()">Iniciar Juego</button>
   </div>
   <div>
+    
+  </div>
+  <div class="juego-de-memoria">
+    <div class="cartas mostrar" id="tablero-juego">
+      <!-- Las cartas se generan dinámicamente con JS -->
+    </div>
+    <div>
+      <h2>
+        Mejores Puntuaciones
+      </h2>
+    </div>
+    <div>
+  </div>
 
   </div>
   <script src="js/script.js"></script>

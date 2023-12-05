@@ -87,6 +87,21 @@ function verificarCoincidencia() {
     }, 500);
   }
 }
+function iniciarJuego() {
+  const nombreUsuario = document.getElementById('username').value;
+  if (nombreUsuario.trim() !== '') {
+    // Ocultar el ingreso de nombre
+    document.getElementById('ingreso-nombre').style.display = 'none';
+
+    // Mostrar el juego cambiando la clase
+    document.getElementById('tablero-juego').classList.add('mostrar');
+    
+    // Aquí puedes comenzar tu juego o realizar acciones adicionales
+    crearTablero();
+  } else {
+    alert('Por favor ingresa tu nombre para comenzar el juego.');
+  }
+}
 
 
-crearTablero();
+
