@@ -1,4 +1,9 @@
 /* Estilos para el juego de memoria */
+body{
+  height: 90vh;
+}
+
+
 .juego-de-memoria {
   display: flex;
   justify-content: center;
