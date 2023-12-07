@@ -12,6 +12,7 @@ let puntosBase = 1000;
 const tiempoLimite = 5 * 60 * 1000; // 5 minutos en milisegundos
 let tiempoInicio, tiempoFinal;
 let puntuacionTotal = 0
+let nombreUsuario = '';
 
 function mezclar(array) {
   let currentIndex = array.length, temp, randomIndex;
@@ -154,7 +155,7 @@ function verificarCoincidencia() {
 
 
 function iniciarJuego() {
-  const nombreUsuario = document.getElementById('username').value;
+  nombreUsuario = document.getElementById('username').value;
   if (nombreUsuario.trim() !== '') {
     // Ocultar el ingreso de nombre
     document.getElementById('ingreso-nombre').style.display = 'none';
