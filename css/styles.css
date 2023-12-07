@@ -1,6 +1,14 @@
 /* Estilos para el juego de memoria */
+html{
+  background-image: url(../imgs/dalequesovo.jpg);
+}
+
 body{
   height: 90vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
 
@@ -9,7 +17,7 @@ body{
   justify-content: center;
   align-items: center;
   height: 100%;
-  width: 100%;
+  width: 80%;
   background-color: #f0f0f0;
 }
 
@@ -51,4 +59,7 @@ body{
 
 .carta.volteada .contenido-carta {
   opacity: 1;
+}
+.contenedor-puntuaciones{
+height: 80%;
 }
