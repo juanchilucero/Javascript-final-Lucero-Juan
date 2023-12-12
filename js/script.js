@@ -13,6 +13,19 @@ const tiempoLimite = 5 * 60 * 1000; // 5 minutos en milisegundos
 let tiempoInicio, tiempoFinal;
 let puntuacionTotal = 0
 let nombreUsuario = '';
+const infoJuego = document.querySelector('.info-juego');
+
+function mostrarMensaje(mensaje) {
+  // Limpiar contenido anterior
+  infoJuego.innerHTML = '';
+
+  // Crear un elemento de párrafo para mostrar el mensaje
+  const parrafo = document.createElement('p');
+  parrafo.innerHTML = mensaje;
+
+  // Agregar el párrafo al div
+  infoJuego.appendChild(parrafo);
+}
 
 function mezclar(array) {
   let currentIndex = array.length, temp, randomIndex;
@@ -93,7 +106,8 @@ function mostrarMejoresPuntuaciones() {
     mejoresPuntuacionesDiv.appendChild(parrafo);
   });
 }
-
+// Evento que se activa cuando el DOM se carga completamente
+document.addEventListener('DOMContentLoaded', mostrarMejoresPuntuaciones);
 
 
 
@@ -122,18 +136,19 @@ function verificarCoincidencia() {
       if (nivelActual < niveles.length - 1) {
         nivelActual++;
         tiempoFinal = Date.now();
-        alert('¡Pasaste al siguiente nivel!');
+
 
 
         const tiempoTranscurrido = tiempoFinal - tiempoInicio;
         let tiempoPenalizacion = Math.floor(tiempoTranscurrido / 1000) * 2;
         const puntuacionNivel = puntosBase - tiempoPenalizacion;
+        
 
         // Sumar la puntuación del nivel actual a la puntuación total
         puntuacionTotal += puntuacionNivel;
-        console.log(`Tu puntuación actual es: ${puntuacionNivel}`);
-        console.log(`Tu puntuación total hasta el momento es: ${puntuacionTotal}`);
 
+        const mensaje = `¡Pasaste al siguiente nivel!<br>Tu puntuación actual es: ${puntuacionNivel}<br>Tu puntuación total hasta el momento es: ${puntuacionTotal}`;
+        mostrarMensaje(mensaje);
         // Restablece las variables de seguimiento de las cartas
         cartas = [];
         cartasVolteadas = [];
@@ -141,8 +156,8 @@ function verificarCoincidencia() {
 
         crearTablero();
       } else {
-        alert('¡Has completado todos los niveles! ¡Has ganado!');
-        console.log(`Tu puntuación final es: ${puntuacionTotal}`);
+        const mensajeFinal = `¡Has completado todos los niveles! ¡Has ganado!<br>Tu puntuación final es: ${puntuacionTotal}`;
+        mostrarMensaje(mensajeFinal);
 
         // Guardar la puntuación total en el localStorage
         guardarPuntaje(nombreUsuario, puntuacionTotal);
@@ -154,19 +169,21 @@ function verificarCoincidencia() {
 }
 
 
+
 function iniciarJuego() {
   nombreUsuario = document.getElementById('username').value;
   if (nombreUsuario.trim() !== '') {
     // Ocultar el ingreso de nombre
     document.getElementById('ingreso-nombre').style.display = 'none';
-
+    const tableroJuego = document.getElementById('tablero-juego');
+    tableroJuego.innerHTML = '';
     // Mostrar el juego cambiando la clase
     document.getElementById('tablero-juego').classList.add('mostrar');
     
     // Aquí puedes comenzar tu juego o realizar acciones adicionales
     crearTablero();
   } else {
-    alert('Por favor ingresa tu nombre para comenzar el juego.');
+    mostrarMensaje('Por favor ingresa tu nombre para comenzar el juego.');
   }
 }
 
