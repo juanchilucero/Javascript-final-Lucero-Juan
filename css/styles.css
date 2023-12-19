@@ -10,15 +10,19 @@ body{
   align-items: center;
   flex-direction: column;
 }
-
-
+h1{
+  background-color: #B6BE9C;
+}
+#ingreso-nombre{
+  background-color: #B6BE9C
+}
 .juego-de-memoria {
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100%;
   width: 80%;
-  background-color: #f0f0f0;
+  background-color: #B6BE9C;
 }
 
 #tablero-juego {
@@ -34,12 +38,14 @@ body{
   display: flex;
 }
 
-
+.info-juego{
+  background-color: #B6BE9C;
+}
 .carta {
   width: 100px; /* Ancho deseado de la carta */
   height: 100px; /* Alto deseado de la carta */
   margin: 5px;
-  background-color: #3498db;
+  background-color: #87A330;
   border-radius: 5px;
   cursor: pointer;
   position: relative;
@@ -49,7 +55,7 @@ body{
 .contenido-carta {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
   opacity: 0;
   transition: opacity 0.5s ease-in-out;
   position: absolute;

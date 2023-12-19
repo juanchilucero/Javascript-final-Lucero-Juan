@@ -1,11 +1,5 @@
-const niveles = [
-  { parejas: 5, imagenes: ['../imgs/anana.png', '../imgs/banana.png', '../imgs/cereza.png', '../imgs/coco.png', '../imgs/durazno.png'] },
-  { parejas: 8, imagenes: ['../imgs/frutilla.png', '../imgs/kiwi.png', '../imgs/manzana.png'] },
-  { parejas: 12, imagenes: ['../imgs/naranja.png', '../imgs/pera.png', '../imgs/sandia.png', '../imgs/uva.png'] }
-];
+const niveles = [];
 
-niveles[1].imagenes = [...niveles[0].imagenes, ...niveles[1].imagenes];
-niveles[2].imagenes = [...niveles[1].imagenes, ...niveles[2].imagenes];
 
 
 let nivelActual = 0;
@@ -167,5 +161,15 @@ const iniciarJuego = () => {
   }
 };
 
-
+fetch('js/niveles.json')
+  .then(response => response.json())
+  .then(data => {
+    niveles.push(...data); // Agrega los niveles obtenidos del JSON al array niveles
+    niveles[1].imagenes = [...niveles[0].imagenes, ...niveles[1].imagenes];
+    niveles[2].imagenes = [...niveles[1].imagenes, ...niveles[2].imagenes];
+    // Luego de cargar los niveles, puedes continuar con el resto de tu código aquí
+    // Llamar a funciones que dependan de los niveles, como crearTablero(), iniciarJuego(), etc.
+    iniciarJuego();
+  })
+  .catch(error => console.error('Error al obtener los niveles:', error));
 
