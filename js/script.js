@@ -13,12 +13,14 @@ let puntuacionTotal = 0
 let nombreUsuario = '';
 const infoJuego = document.querySelector('.info-juego');
 
-const mostrarMensaje = (mensaje) => {
-  infoJuego.innerHTML = '';
-  const parrafo = document.createElement('p');
-  parrafo.innerHTML = mensaje;
-  infoJuego.appendChild(parrafo);
+const mostrarSweetAlert = (mensaje, icono = 'info') => {
+  Swal.fire({
+    icon: icono,
+    title: mensaje,
+    confirmButtonText: 'Entendido'
+  });
 };
+
 
 const mezclar = (array) => {
   let currentIndex = array.length;
@@ -125,7 +127,7 @@ const verificarCoincidencia = () => {
         puntuacionTotal += puntuacionNivel;
 
         const mensaje = `¡Pasaste al siguiente nivel!<br>Tu puntuación actual es: ${puntuacionNivel}<br>Tu puntuación total hasta el momento es: ${puntuacionTotal}`;
-        mostrarMensaje(mensaje);
+        mostrarSweetAlert(mensaje);
 
         cartas = [];
         cartasVolteadas = [];
@@ -134,7 +136,7 @@ const verificarCoincidencia = () => {
         crearTablero();
       } else {
         const mensajeFinal = `¡Has completado todos los niveles! ¡Has ganado!<br>Tu puntuación final es: ${puntuacionTotal}`;
-        mostrarMensaje(mensajeFinal);
+        mostrarSweetAlert(mensajeFinal);
         guardarPuntaje(nombreUsuario, puntuacionTotal);
         mostrarMejoresPuntuaciones();
       }
@@ -153,11 +155,11 @@ const iniciarJuego = () => {
     tableroJuego.innerHTML = '';
 
     document.getElementById('tablero-juego').classList.add('mostrar');
-    mostrarMensaje('¡Bienvenido al juego!');
+    mostrarSweetAlert('¡Bienvenido al juego!');
     
     crearTablero();
   } else {
-    mostrarMensaje('Por favor ingresa tu nombre para comenzar el juego.');
+    mostrarSweetAlert('Por favor ingresa tu nombre para comenzar el juego.');
   }
 };
 
