@@ -2,9 +2,9 @@
     {
       "parejas": 5,
       "imagenes": [
-        "/imgs/anana.png",
-        "/imgs/banana.png",
-        "/imgs/cereza.png",
+        "./imgs/anana.png",
+        "./imgs/banana.png",
+        "./imgs/cereza.png",
         "./imgs/coco.png",
         "./imgs/durazno.png"
       ]
@@ -12,18 +12,18 @@
     {
       "parejas": 8,
       "imagenes": [
-        "../imgs/frutilla.png",
-        "../imgs/kiwi.png",
-        "../imgs/manzana.png"
+        "./imgs/frutilla.png",
+        "./imgs/kiwi.png",
+        "./imgs/manzana.png"
       ]
     },
     {
       "parejas": 12,
       "imagenes": [
-        "../imgs/naranja.png",
-        "../imgs/pera.png",
-        "../imgs/sandia.png",
-        "../imgs/uva.png"
+        "./imgs/naranja.png",
+        "./imgs/pera.png",
+        "./imgs/sandia.png",
+        "./imgs/uva.png"
       ]
     }
   ]
