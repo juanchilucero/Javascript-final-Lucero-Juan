@@ -1,7 +1,5 @@
 const niveles = [];
 
-
-
 let nivelActual = 0;
 let cartas = [];
 let cartasVolteadas = [];

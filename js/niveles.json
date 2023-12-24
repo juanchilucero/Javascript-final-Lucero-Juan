@@ -2,11 +2,11 @@
     {
       "parejas": 5,
       "imagenes": [
-        "../imgs/anana.png",
-        "../imgs/banana.png",
+        "/imgs/anana.png",
+        "/imgs/banana.png",
         "/imgs/cereza.png",
-        "../imgs/coco.png",
-        "../imgs/durazno.png"
+        "./imgs/coco.png",
+        "./imgs/durazno.png"
       ]
     },
     {
