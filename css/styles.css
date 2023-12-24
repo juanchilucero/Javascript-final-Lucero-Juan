@@ -36,6 +36,7 @@ h1{
 /* Añade una clase para mostrar/ocultar el tablero */
 #tablero-juego.mostrar {
   display: flex;
+  align-content: center;
 }
 
 .info-juego{
