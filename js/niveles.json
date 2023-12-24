@@ -4,7 +4,7 @@
       "imagenes": [
         "../imgs/anana.png",
         "../imgs/banana.png",
-        "../imgs/cereza.png",
+        "/imgs/cereza.png",
         "../imgs/coco.png",
         "../imgs/durazno.png"
       ]
